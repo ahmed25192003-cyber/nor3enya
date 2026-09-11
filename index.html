@@ -153,7 +153,6 @@
             z-index: 10;
         }
 
-        /* اسم مها بخط عربي فخم وشديد التميز */
         .name-container {
             margin-bottom: 15px;
             animation: zoomIn 1.2s ease;
@@ -183,7 +182,6 @@
             padding-bottom: 5px;
         }
 
-        /* صندوق كلام الحب */
         .love-card {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -210,10 +208,10 @@
             color: rgba(255, 42, 109, 0.15);
         }
 
-        /* معرض الصور الفخم */
+        /* معرض الصور المطور لإظهار الوجه بالكامل وبأعلى جودة */
         .photos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
@@ -221,26 +219,30 @@
         .photo-frame {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
-            padding: 12px;
+            padding: 8px;
             border-radius: 20px;
-            backdrop-filter: blur(8px);
-            transform: translateY(-60px);
+            backdrop-filter: blur(10px);
             opacity: 0;
             animation: dropSlide 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
             transition: all 0.4s ease;
             box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            height: 380px; /* طول متناسق مع مقاسات الصور الطولية */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .photo-frame:hover {
-            transform: translateY(-10px) scale(1.05);
+            transform: translateY(-10px) scale(1.03);
             border-color: var(--primary);
-            box-shadow: 0 15px 35px rgba(255, 42, 109, 0.4);
+            box-shadow: 0 15px 35px rgba(255, 42, 109, 0.5);
         }
 
         .photo-frame img {
             width: 100%;
-            height: 240px;
+            height: 100%;
             object-fit: cover;
+            object-position: top center; /* يضمن ضبط الصورة بحيث يظهر الوجه في الأعلى دائماً */
             border-radius: 14px;
         }
 
@@ -299,7 +301,7 @@
 
     <div class="ambient-light"></div>
 
-    <!-- شاشة طلب الباسورد الاحترافية -->
+    <!-- شاشة طلب كلمة السر -->
     <div id="login-screen">
         <div class="login-card">
             <h2>🔐 مرحباً بكِ في عالمنا</h2>
@@ -321,24 +323,24 @@
 
         <div class="love-card">
             <p id="love-text">
-                من أول يوم اتكلمنا فيه بتاريخ 7/7/2026 وحياتي اتغيرت وبقت أجمَل بوجودك فيها ❤️<br>
+                من أول يوم اتكلمنا فيه وحياتي اتغيرت وبقت أجمَل بوجودك فيها ❤️<br>
                 أنتي مش بس حبيبتي، أنتي السر اللي بيخليني أبتسم كل يوم. ربنا يديمك في حياتي يا أغلى ما أملك!
             </p>
         </div>
 
-        <!-- المعرض الاحترافي للـ 4 صور -->
+        <!-- المعرض المصمم خصيصاً للصور الأربعة -->
         <div class="photos-grid">
             <div class="photo-frame">
-                <img src="photo1.jpg" alt="صورة 1" onerror="this.src='https://via.placeholder.com/300x400/2a0845/ffffff?text=Photo+1'">
+                <img src="photo1.jpg" alt="صورة 1">
             </div>
             <div class="photo-frame">
-                <img src="photo2.jpg" alt="صورة 2" onerror="this.src='https://via.placeholder.com/300x400/2a0845/ffffff?text=Photo+2'">
+                <img src="photo2.jpg" alt="صورة 2">
             </div>
             <div class="photo-frame">
-                <img src="photo3.jpg" alt="صورة 3" onerror="this.src='https://via.placeholder.com/300x400/2a0845/ffffff?text=Photo+3'">
+                <img src="photo3.jpg" alt="صورة 3">
             </div>
             <div class="photo-frame">
-                <img src="photo4.jpg" alt="صورة 4" onerror="this.src='https://via.placeholder.com/300x400/2a0845/ffffff?text=Photo+4'">
+                <img src="photo4.jpg" alt="صورة 4">
             </div>
         </div>
     </div>
@@ -369,7 +371,7 @@
             }
         }
 
-        // تأثير تساقط القلوب الاحترافي
+        // تأثير القلوب المتساقطة المضيئة
         function startHearts() {
             const icons = ['❤️', '💖', '✨', '💕'];
             setInterval(() => {
